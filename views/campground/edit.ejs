@@ -1,0 +1,35 @@
+<% layout('layouts/boilerplate') -%>
+
+<div class="row justify-content-center">
+  <div class="col-6">
+    <h2 class="text-center">Edit Campground</h2>
+    <form action="/campground/<%= camp.id %>?_method=PUT" method="POST">
+
+      <div>
+        <label for="title" class="form-label">Title</label>
+        <input type="text" id="title" name="campground[title]" value="<%= camp.title %>" class="form-control">
+      </div>
+      <div>
+        <label for="Location" class="form-label">Location</label>
+        <input type="text" id="Location" name="campground[location]" value="<%= camp.location %>" class="form-control">
+      </div>
+      <div>
+        <label for="Image" class="form-label">Image</label>
+        <input type="text" id="Image" name="campground[image]" value="<%= camp.image %>" class="form-control">
+      </div>
+      <div>
+        <label for="CampgroundPrice" class="form-label">Campground Price</label>
+        <div class="input-group mb-3">
+          <span class="input-group-text">$</span>
+          <input type="text" id="CampgroundPrice" class="form-control" name="campground[price]" value="<%= camp.price %>" placeholder="0.00" aria-label="Amount (to the nearest dollar)">
+        </div>
+      </div>
+      <div>
+        <label for="description" class="form-label">Description</label>
+        <textarea id="description" name="campground[description]" class="form-control"><%=camp.description%></textarea>
+      </div>
+      <button class="btn btn-info my-3">Edit Campground</button>
+      <div><a href="/campground/<%= camp._id  %>">Cancel Edit</a></div>
+    </form>
+  </div>
+</div>

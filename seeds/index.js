@@ -19,9 +19,13 @@ let buildRandomData = async () => {
     await campground.deleteMany({});
     for (let i = 0; i < 50; i++) {
         let randCity = randomItem(city);
+        let randPrice = Math.floor(Math.random() * 1000);
         let newItem = new campground({
             location: `${randCity.city}, ${randCity.state}`,
-            title: `${randomItem(descriptors)} ${randomItem(places)}`
+            title: `${randomItem(descriptors)} ${randomItem(places)}`,
+            description: "In the heart of a lush forest, where the trees reach up towards the sky like ancient guardians, lies a campsite embraced by nature's enchantment. The camp is nestled amidst a sea of emerald foliage, creating a cocoon of serenity that beckons adventurers seeking respite from the cacophony of modern life.",
+            image: "https://source.unsplash.com/random/483251",
+            price: randPrice
         });
         await newItem.save();
     }
