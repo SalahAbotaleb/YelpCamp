@@ -3,33 +3,70 @@
 <div class="row justify-content-center">
   <div class="col-6">
     <h2 class="text-center">New Campground</h2>
-    <form action="/campground" method="POST">
+    <form class="needs-validation" action="/campground" method="POST" novalidate>
 
       <div>
         <label for="title" class="form-label">Title</label>
-        <input type="text" id="title" name="campground[title]" class="form-control">
+        <input type="text" id="title" name="campground[title]" class="form-control" required>
+        <div class="valid-feedback">
+          Looks good!
+        </div>
       </div>
       <div>
         <label for="Location" class="form-label">Location</label>
-        <input type="text" id="Location" name="campground[location]" class="form-control">
+        <input type="text" id="Location" name="campground[location]" class="form-control" required>
+        <div class="valid-feedback">
+          Looks good!
+        </div>
       </div>
       <div>
         <label for="Image" class="form-label">Image</label>
-        <input type="text" id="Image" name="campground[image]" class="form-control">
+        <input type="text" id="Image" name="campground[image]" class="form-control" required>
+        <div class="valid-feedback">
+          Looks good!
+        </div>
       </div>
       <div>
         <label for="CampgroundPrice" class="form-label">Campground Price</label>
         <div class="input-group mb-3">
           <span class="input-group-text">$</span>
-          <input type="text" id="CampgroundPrice" class="form-control" name="campground[price]" placeholder="0.00" aria-label="Amount (to the nearest dollar)">
+          <input type="text" id="CampgroundPrice" class="form-control" name="campground[price]" placeholder="0.00" aria-label="Amount (to the nearest dollar)" required>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
         </div>
       </div>
       <div>
         <label for="description" class="form-label">Description</label>
-        <textarea id="description" name="campground[description]" class="form-control"></textarea>
+        <textarea id="description" name="campground[description]" class="form-control" required></textarea>
+        <div class="valid-feedback">
+          Looks good!
+        </div>
       </div>
       <button class="btn btn-success my-3">Add Campground</button>
       <div><a href="/campground">Back All Campgrounds</a></div>
     </form>
   </div>
 </div>
+
+<script>
+  (function() {
+    'use strict'
+
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.querySelectorAll('.needs-validation')
+
+    // Loop over them and prevent submission
+    Array.prototype.slice.call(forms)
+      .forEach(function(form) {
+        form.addEventListener('submit', function(event) {
+          if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+          }
+
+          form.classList.add('was-validated')
+        }, false)
+      })
+  })()
+</script>
