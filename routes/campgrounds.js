@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const campground = require("../controllers/campground");
-const AsyncHandler = require("../utils/asyncHandler");
+const AsyncHandler = require("../utils/AsyncHandler");
 const { isLoggedIn, isAuth, verifyCampgroundSchema } = require("../utils/middleware");
 
 const multer = require("multer");
