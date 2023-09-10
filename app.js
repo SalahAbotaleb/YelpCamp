@@ -8,7 +8,7 @@ const mongoose = require("mongoose");
 const methodOverride = require("method-override");
 const engine = require("ejs-mate");
 
-const ExpressError = require("./utils/expressError");
+//const ExpressError = require("./utils/expressError");
 
 const campgroundRoutes = require("./routes/campgrounds");
 const reviewRoutes = require("./routes/reviews");
@@ -111,7 +111,7 @@ app.get("/home", (req, res) => {
 });
 
 app.all("*", (req, res, next) => {
-    next(new ExpressError("Page Not Found", 404));
+    next();
 })
 
 //error handling routine
