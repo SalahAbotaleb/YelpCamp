@@ -1,9 +1,9 @@
 <% layout('layouts/boilerplate') -%>
 
 <div class="row justify-content-center">
-  <div class="col-6">
+  <div class="col-md-6">
     <h2 class="text-center">Edit Campground</h2>
-    <form class="needs-validation" action="/campground/<%= camp.id %>?_method=PUT" method="POST" novalidate>
+    <form class="needs-validation" action="/campground/<%= camp.id %>?_method=PUT" method="POST" enctype="multipart/form-data" novalidate>
 
       <div>
         <label for="title" class="form-label">Title</label>
@@ -20,11 +20,22 @@
         </div>
       </div>
       <div>
-        <label for="Image" class="form-label">Image</label>
-        <input type="text" id="Image" name="campground[image]" value="<%= camp.image %>" class="form-control" required>
+        <label for="Image" class="form-label">Add more images</label>
+        <input type="file" id="Image" name="images" class="form-control image-input" multiple="multiple">
         <div class="valid-feedback">
           Looks good!
         </div>
+        <% camp.images.forEach((image,i) => { %>
+        <div class="card w-200 d-inline-flex my-2" style="width: 18rem;">
+          <img src="<%= image.imageThumbnailURL %>" class="card-img-top" alt="campground Image">
+          <div class="card-body">
+            <input class="form-check-input" type="checkbox" name="deletedImages[]" value="<%= image.filename %>" id="image-<%= i %>">
+            <label class="form-check-label" for="image-<%= i %>">
+              Delete Image
+            </label>
+          </div>
+        </div>
+        <% }) %>
       </div>
       <div>
         <label for="CampgroundPrice" class="form-label">Campground Price</label>
@@ -44,28 +55,7 @@
         </div>
       </div>
       <button class="btn btn-info my-3">Edit Campground</button>
-      <div><a href="/campground/<%= camp._id  %>">Cancel Edit</a></div>
+      <div><a class="btn btn-info" href="/campground/<%= camp._id  %>">Cancel Edit</a></div>
     </form>
   </div>
 </div>
-<script>
-  (function() {
-    'use strict'
-
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-    var forms = document.querySelectorAll('.needs-validation')
-
-    // Loop over them and prevent submission
-    Array.prototype.slice.call(forms)
-      .forEach(function(form) {
-        form.addEventListener('submit', function(event) {
-          if (!form.checkValidity()) {
-            event.preventDefault()
-            event.stopPropagation()
-          }
-
-          form.classList.add('was-validated')
-        }, false)
-      })
-  })()
-</script>

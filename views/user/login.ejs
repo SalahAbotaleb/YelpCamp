@@ -1,0 +1,29 @@
+<% layout('layouts/boilerplate') -%>
+<div class="d-flex justify-content-center align-items-center">
+  <div class="row justify-content-center align-items-center">
+    <div class="col-md-12 col-sm-8 card shadow px-0 my-3">
+      <img class="card-img-top mh-100 " src="https://images.unsplash.com/photo-1534067783941-51c9c23ecefd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bW91bnRhaW58ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&h=400&q=60" alt="Campground Image">
+      <div class="card-body">
+        <h2 class="mr-auto">Log In</h2>
+        <form class="needs-validation" action="/login" method="POST" novalidate>
+          <div>
+            <label for="username" class="form-label">Username</label>
+            <input type="text" id="username" name="username" class="form-control" required>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+          <div>
+            <label for="password" class="form-label">Password</label>
+            <input type="password" id="password" name="password" class="form-control" required>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+          <button class="btn btn-success my-3">Log In</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

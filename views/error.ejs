@@ -5,7 +5,9 @@
       <h1 class="alert-danger"><%= error.status %></h1>
       <p> <%= error.message %></p>
       <hr>
+      <% if (process.env.NODE_ENV != "Production") { %>
       <p class="mb-0" style="word-wrap:break-word"><%= error.stack %></p>
+      <% } %>
     </div>
   </div>
 </div>
