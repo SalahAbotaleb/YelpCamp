@@ -28,8 +28,8 @@ const { directives } = require("./security");
 const mongoStore = require("connect-mongo");
 const MongoStore = require("connect-mongo");
 //mongoose open connection
-const mongoURL = "mongodb://127.0.0.1:27017/YelpCamp";
-//"mongodb://127.0.0.1:27017/YelpCamp"
+const mongoURL = process.env.MONGO_DB_URL || "mongodb://127.0.0.1:27017/YelpCamp";
+
 mongoose.connect(mongoURL);
 const db = mongoose.connection;
 db.once("connected", () => {
@@ -57,14 +57,16 @@ app.use(
     })
 );
 
+const secret = process.env.SECRET || "ThisIsSecretKey";
 const store = MongoStore.create({
     mongoUrl: mongoURL,
-    touchAfter: 24 * 3600
+    touchAfter: 24 * 3600,
+    secret
 });
 const sessionConfiguration = {
     store,
     name: "sesion",
-    secret: "ThisIsSecretKey",
+    secret,
     resave: false,
     saveUninitialized: true,
     cookie: {
@@ -117,6 +119,8 @@ app.use((error, req, res, next) => {
     if (!error.status) error.status = 500;
     res.render("error.ejs", { error });
 })
-app.listen("3000", () => {
-    console.log("Server is up on port 3000");
+
+const port = process.env.PORT || "3000";
+app.listen(port, () => {
+    console.log(`Server is up on port ${port}`);
 });

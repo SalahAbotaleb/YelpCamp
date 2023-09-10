@@ -37,8 +37,6 @@ function registerPath(req, res, next) {
 
 const verifyCampgroundSchema = (req, res, next) => {
     const campData = req.body;
-    console.log(req.body);
-    console.log("ok");
     const { error } = campgroundSchema.validate(campData);
     if (error) {
         const ErrorList = error.details.map(err => err.message).join(',');

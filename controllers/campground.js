@@ -10,7 +10,6 @@ module.exports.getRoot = async (req, res) => {
 
 module.exports.createCampground = async (req, res) => {
     const campData = req.body;
-    console.log(req.body);
     const camp = new campground({ ...campData.campground, owner: req.user._id });
     camp.images = req.files.map(image => {
         return {

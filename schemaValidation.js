@@ -12,8 +12,6 @@ const removeHTMLvalidation = (joi) => {
                 validate(value, helpers, args, options) {
                     const original = value;
                     const clean = sanitizeHtml(original, { allowedTags: [] });
-                    console.log(original);
-                    console.log(clean);
                     if (original !== clean) {
                         return helpers.error('string.noHTMLTags', { value });
                     }
