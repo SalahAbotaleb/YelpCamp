@@ -8,7 +8,7 @@ const mongoose = require("mongoose");
 const methodOverride = require("method-override");
 const engine = require("ejs-mate");
 
-const { ExpressError } = require("./utils/expressError");
+const ExpressError = require("./utils/expressError");
 
 const campgroundRoutes = require("./routes/campgrounds");
 const reviewRoutes = require("./routes/reviews");
@@ -25,7 +25,6 @@ const mongoSanitize = require("express-mongo-sanitize");
 const helmet = require("helmet");
 const { directives } = require("./security");
 
-const mongoStore = require("connect-mongo");
 const MongoStore = require("connect-mongo");
 //mongoose open connection
 const mongoURL = process.env.MONGO_DB_URL || "mongodb://127.0.0.1:27017/YelpCamp";
