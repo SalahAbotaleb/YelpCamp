@@ -1,7 +1,7 @@
 const { campground } = require("../models/camp");
 const { review } = require("../models/review");
 const { campgroundSchema, reviewSchema } = require("../schemaValidation");
-const ExpressError = require("./expressError");
+const ExpressError = require("./ExpressError");
 
 function isLoggedIn(req, res, next) {
     if (req.isAuthenticated()) {
