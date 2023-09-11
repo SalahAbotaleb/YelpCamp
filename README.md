@@ -73,7 +73,4 @@ npm start
 ![](https://github.com/SalahAbotaleb/YelpCamp/assets/95881664/8a0ce3a4-59f5-4fce-a920-12436af034bd)
 
 
-https://github.com/SalahAbotaleb/YelpCamp/assets/95881664/9968e21c-a43f-41b8-a885-f514502a7ce2
-
-
 
