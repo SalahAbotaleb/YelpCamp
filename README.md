@@ -7,7 +7,7 @@ A RESTFUL MVC web application for  adding and reviewing campgrounds.
 - [Topics Covered](#item-3)
 - [How To Use](#item-4)
 - [Screenshots](#item-5)
-- [Demo] (#item-6)
+- [Demo](#item-6)
 
 <a id="item-1"></a>
 ## Technology Stack
