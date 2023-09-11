@@ -7,6 +7,7 @@ A RESTFUL MVC web application for  adding and reviewing campgrounds.
 - [Topics Covered](#item-3)
 - [How To Use](#item-4)
 - [Screenshots](#item-5)
+- [Demo] (#item-6)
 
 <a id="item-1"></a>
 ## Technology Stack
@@ -67,3 +68,7 @@ npm start
 ![login](/docs/login.PNG)
 ### Campground view page
 ![campground_view](/docs/campground.PNG)
+<a id="item-6"></a>
+## Demo
+<video src="/docs/demo.mp4" controls="controls" style="max-width: 730px;">
+</video>
