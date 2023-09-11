@@ -70,5 +70,4 @@ npm start
 ![campground_view](/docs/campground.PNG)
 <a id="item-6"></a>
 ## Demo
-<video src="/docs/demo.mp4" controls="controls" style="max-width: 730px;">
-</video>
+/docs/demo.mp4
