@@ -70,4 +70,5 @@ npm start
 ![campground_view](/docs/campground.PNG)
 <a id="item-6"></a>
 ## Demo
-/docs/demo.mp4
+https://github.com/SalahAbotaleb/YelpCamp/assets/95881664/8a0ce3a4-59f5-4fce-a920-12436af034bd
+
